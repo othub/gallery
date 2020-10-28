@@ -59,6 +59,9 @@ namespace IBM.Watsson.Examples
 
         private SpeechToTextService _service;
 
+        public GameObject firstPanel, secondPanel, thirdPanel;
+
+
         void Start()
         {
             LogSystem.InstallDefaultReactors();
@@ -212,6 +215,9 @@ namespace IBM.Watsson.Examples
                         //string text = string.Format("{0} ({1}, {2:0.00})\n", alt.transcript, res.final ? "Final" : "Interim", alt.confidence);
                         //Log.Debug("ExampleStreaming.OnRecognize()", text);
                         ResultsField.text = alt.transcript;
+                        if (alt.transcript.Contains("change") || alt.transcript.Contains("Change")){
+                            VBChangePanels();
+                        }      
                     }
 
                     if (res.keywords_result != null && res.keywords_result.keyword != null)
@@ -234,6 +240,28 @@ namespace IBM.Watsson.Examples
                 }
             }
         }
+
+    void VBChangePanels()
+    {
+        if (firstPanel.activeInHierarchy)
+        {
+            firstPanel.SetActive(false);
+            secondPanel.SetActive(true);
+            thirdPanel.SetActive(false);
+        }
+        else if (secondPanel.activeInHierarchy)
+        {
+            firstPanel.SetActive(false);
+            secondPanel.SetActive(false);
+            thirdPanel.SetActive(true);
+        }
+        else if (thirdPanel.activeInHierarchy)
+        {
+            firstPanel.SetActive(true);
+            secondPanel.SetActive(false);
+            thirdPanel.SetActive(false);
+        }
+    }
 
         private void OnRecognizeSpeaker(SpeakerRecognitionEvent result)
         {
