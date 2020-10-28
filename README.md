@@ -43,8 +43,17 @@ To change the current panel, you can either:
    
 Also, you can **Scale** and **Rotate** the object shown using your phone's touch screen.
 
-## Use
+## Example Use
 TBD when i have some free time :).
+
+## Development Requirements
+- [Vuforia](https://developer.vuforia.com/downloads/sdk) for Unity.
+- A valid Vuforia License.
+- [Unity](https://unity3d.com/unity/whats-new/2019.4.13) 2019.4.13f1.
+- Vuforia Image Database: You can pick your own but the one used for this project is [this](https://github.com/othub/gallery/blob/master/Assets/Images/cq5dam.web.1280.1280.jpeg). 
+- [IBMWatson Speech-To-Text](https://github.com/watson-developer-cloud/unity-sdk) for Unity.
+- Android SDK and NDK. 
+- JDK. 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
