@@ -7,8 +7,9 @@ public class VBInteraction : MonoBehaviour
 {
 
     VirtualButtonBehaviour[] virtualButtonBehaviours;
-    public GameObject firstPanel, secondPanel;
+    public GameObject firstPanel, secondPanel, thirdPanel;
     public GameObject cube, sphere, capsule, cylinder;
+    public GameObject donut, cake;
     string vbName;
 
     void Start()
@@ -27,7 +28,7 @@ public class VBInteraction : MonoBehaviour
         vbName = vb.VirtualButtonName;
 
         if (vbName == "VirtualButtonChange")
-            VirtualButtonChange();
+            VBChangePanels();
         else if (firstPanel.activeInHierarchy)
         {
             ClearCanvas();
@@ -44,6 +45,14 @@ public class VBInteraction : MonoBehaviour
             else if (vbName == "ButtonV2")
                 ShowCylinder();
         }
+        else if (thirdPanel.activeInHierarchy)
+        {
+            ClearCanvas();
+            if (vbName == "ButtonV1")
+                ShowDonut();
+            else if (vbName == "ButtonV2")
+                ShowCake();
+        }
     }
 
     public void OnButtonReleased(VirtualButtonBehaviour vb)
@@ -51,17 +60,25 @@ public class VBInteraction : MonoBehaviour
             Debug.Log("ButtonReleased");
     }
 
-    void VirtualButtonChange()
+    void VBChangePanels()
     {
         if (firstPanel.activeInHierarchy)
         {
             firstPanel.SetActive(false);
             secondPanel.SetActive(true);
+            thirdPanel.SetActive(false);
         }
         else if (secondPanel.activeInHierarchy)
         {
+            firstPanel.SetActive(false);
+            secondPanel.SetActive(false);
+            thirdPanel.SetActive(true);
+        }
+        else if (thirdPanel.activeInHierarchy)
+        {
             firstPanel.SetActive(true);
             secondPanel.SetActive(false);
+            thirdPanel.SetActive(false);
         }
     }
 
@@ -71,6 +88,8 @@ public class VBInteraction : MonoBehaviour
         sphere.SetActive(false);
         capsule.SetActive(false);
         cylinder.SetActive(false);
+        donut.SetActive(false);
+        cake.SetActive(false);
     }
 
     void ShowCube()
@@ -95,6 +114,18 @@ public class VBInteraction : MonoBehaviour
     {
         Debug.Log("Cylinder");
         cylinder.SetActive(true);
+    }
+    
+    void ShowDonut()
+    {
+        Debug.Log("Donut");
+        donut.SetActive(true);
+    }
+
+    void ShowCake()
+    {
+        Debug.Log("Cake");
+        cake.SetActive(true);
     }
 
 }
