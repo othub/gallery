@@ -4,7 +4,7 @@ gallery is a unity *educational* project used for interacting with 3D objects us
 
 ## Objects that You'll Interact With
 
-You can add/change/create your own objects and add them to the models but the default in this project are the following
+You can add/change/create your own objects and add them to the models but the default in this project are the following:
 
 1. Unity Built-in Objects:
    * Cube.
@@ -26,7 +26,8 @@ TBD when i have some free time :).
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## References
-some references used to configure the project.
+Some references used to configure the project.
+
 [Vuforia](https://www.youtube.com/watch?v=ETAnttef7Zw): Configuring Vuforia for Unity and license managing.
 
 [IBMWatson](https://github.com/watson-developer-cloud/unity-sdk): Configuring Speech-To-Text for Unity.
