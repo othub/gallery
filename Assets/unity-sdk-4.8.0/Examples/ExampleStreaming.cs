@@ -59,7 +59,7 @@ namespace IBM.Watsson.Examples
 
         private SpeechToTextService _service;
 
-        public GameObject firstPanel, secondPanel, thirdPanel;
+        public GameObject firstPanel, secondPanel, thirdPanel, fourthPanel;
 
 
         void Start()
@@ -248,18 +248,28 @@ namespace IBM.Watsson.Examples
             firstPanel.SetActive(false);
             secondPanel.SetActive(true);
             thirdPanel.SetActive(false);
+            fourthPanel.SetActive(false);
         }
         else if (secondPanel.activeInHierarchy)
         {
             firstPanel.SetActive(false);
             secondPanel.SetActive(false);
             thirdPanel.SetActive(true);
+            fourthPanel.SetActive(false);
         }
         else if (thirdPanel.activeInHierarchy)
+        {
+            firstPanel.SetActive(false);
+            secondPanel.SetActive(false);
+            thirdPanel.SetActive(false);
+            fourthPanel.SetActive(true);
+        }
+        else if (fourthPanel.activeInHierarchy)
         {
             firstPanel.SetActive(true);
             secondPanel.SetActive(false);
             thirdPanel.SetActive(false);
+            fourthPanel.SetActive(false);
         }
     }
 

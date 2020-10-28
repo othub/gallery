@@ -7,9 +7,11 @@ public class VBInteraction : MonoBehaviour
 {
 
     VirtualButtonBehaviour[] virtualButtonBehaviours;
-    public GameObject firstPanel, secondPanel, thirdPanel;
-    public GameObject cube, sphere, capsule, cylinder;
+    public GameObject firstPanel, secondPanel, thirdPanel, fourthPanel;
+    public GameObject cube, sphere;
+    public GameObject cafe, potion;
     public GameObject donut, cake;
+    public GameObject pumpkin, weapon;
     string vbName;
 
     void Start()
@@ -41,9 +43,9 @@ public class VBInteraction : MonoBehaviour
         {
             ClearCanvas();
             if (vbName == "ButtonV1")
-                ShowCapsule();
+                ShowCafe();
             else if (vbName == "ButtonV2")
-                ShowCylinder();
+                ShowPotion();
         }
         else if (thirdPanel.activeInHierarchy)
         {
@@ -52,6 +54,14 @@ public class VBInteraction : MonoBehaviour
                 ShowDonut();
             else if (vbName == "ButtonV2")
                 ShowCake();
+        }
+        else if (fourthPanel.activeInHierarchy)
+        {
+            ClearCanvas();
+            if (vbName == "ButtonV1")
+                ShowPumpkin();
+            else if (vbName == "ButtonV2")
+                ShowWeapon();
         }
     }
 
@@ -67,18 +77,28 @@ public class VBInteraction : MonoBehaviour
             firstPanel.SetActive(false);
             secondPanel.SetActive(true);
             thirdPanel.SetActive(false);
+            fourthPanel.SetActive(false);
         }
         else if (secondPanel.activeInHierarchy)
         {
             firstPanel.SetActive(false);
             secondPanel.SetActive(false);
             thirdPanel.SetActive(true);
+            fourthPanel.SetActive(false);
         }
         else if (thirdPanel.activeInHierarchy)
+        {
+            firstPanel.SetActive(false);
+            secondPanel.SetActive(false);
+            thirdPanel.SetActive(false);
+            fourthPanel.SetActive(true);
+        }
+        else if (fourthPanel.activeInHierarchy)
         {
             firstPanel.SetActive(true);
             secondPanel.SetActive(false);
             thirdPanel.SetActive(false);
+            fourthPanel.SetActive(false);
         }
     }
 
@@ -86,10 +106,12 @@ public class VBInteraction : MonoBehaviour
     {
         cube.SetActive(false);
         sphere.SetActive(false);
-        capsule.SetActive(false);
-        cylinder.SetActive(false);
+        cafe.SetActive(false);
+        potion.SetActive(false);
         donut.SetActive(false);
         cake.SetActive(false);
+        pumpkin.SetActive(false);
+        weapon.SetActive(false);
     }
 
     void ShowCube()
@@ -104,16 +126,16 @@ public class VBInteraction : MonoBehaviour
         sphere.SetActive(true);
     }
 
-    void ShowCapsule()
+    void ShowCafe()
     {
         Debug.Log("Capsule");
-        capsule.SetActive(true);
+        cafe.SetActive(true);
     }
 
-    void ShowCylinder()
+    void ShowPotion()
     {
         Debug.Log("Cylinder");
-        cylinder.SetActive(true);
+        potion.SetActive(true);
     }
     
     void ShowDonut()
@@ -126,6 +148,18 @@ public class VBInteraction : MonoBehaviour
     {
         Debug.Log("Cake");
         cake.SetActive(true);
+    }    
+    
+    void ShowPumpkin()
+    {
+        Debug.Log("Pumpkin");
+        pumpkin.SetActive(true);
+    }
+
+    void ShowWeapon()
+    {
+        Debug.Log("Weapon");
+        weapon.SetActive(true);
     }
 
 }
