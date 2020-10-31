@@ -41,7 +41,7 @@ To change the current panel, you can either:
    * Click the _**Red**_ Virtual Button,
    * Or, Say _in clear words_ to your microphone the word **Change**, so that the Speech-To-Text algorithm works correctly and you'll see the word you said in the bottom-left corner of your screen in a white text button.
    
-Also, you can **Scale** and **Rotate** the object shown using your phone's touch screen.
+Also, you can **Scale** and **Rotate** and **Move** the object shown on your phone's touch screen using only **two** fingers.
 
 ## Example Use
 ### Changing Panels clicking Virtual Buttons
