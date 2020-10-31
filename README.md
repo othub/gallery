@@ -44,7 +44,14 @@ To change the current panel, you can either:
 Also, you can **Scale** and **Rotate** the object shown using your phone's touch screen.
 
 ## Example Use
-TBD when i have some free time :).
+### Changing Panels clicking Virtual Buttons
+![](https://github.com/othub/gallery/blob/master/Screenshots/ChangePanelWithButtons.gif)
+
+### Changing Panels using Voice Command
+![](https://github.com/othub/gallery/blob/master/Screenshots/ChangePanelWithVoice.gif)
+
+### Interacting and Moving and Scaling Object
+![](https://github.com/othub/gallery/blob/master/Screenshots/MovingObject.gif)
 
 ## Development Requirements
 - [Vuforia](https://developer.vuforia.com/downloads/sdk) for Unity.
